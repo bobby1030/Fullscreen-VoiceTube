@@ -4,7 +4,7 @@
 // @description Make VoiceTube Video FullScreen !
 // @include     https://*.voicetube.com/*
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js
-// @version     1.2
+// @version     1.3
 // @grant       none
 // @updateURL   https://rawgit.com/bobby1030/Fullscreen-VoiceTube/master/fullscreenVoiceTube.user.js
 // @icon        http://tw.blog.voicetube.com/wp-content/uploads/2014/07/unnamed-2.png
