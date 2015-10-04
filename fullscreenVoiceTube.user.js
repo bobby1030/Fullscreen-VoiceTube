@@ -2,9 +2,9 @@
 // @name        Fullscreen VoiceTube
 // @namespace   fullscreen.voicetube
 // @description Make VoiceTube Video FullScreen !
-// @include     https://tw.voicetube.com/*
+// @include     https://*.voicetube.com/*
 // @require     https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js
-// @version     1.1
+// @version     1.2
 // @grant       none
 // @updateURL   https://cdn.rawgit.com/bobby1030/Fullscreen-VoiceTube/master/fullscreenVoiceTube.user.js
 // @icon        http://tw.blog.voicetube.com/wp-content/uploads/2014/07/unnamed-2.png
@@ -12,11 +12,19 @@
 
 jQuery.noConflict()
 
+if (location.hostname.charAt(0) == "w") {
+    subdomain = "www"
+    fullscreen = "Fullscreen"
+} else if (location.hostname.charAt(0) == "t") {
+    subdomain = "tw"
+    fullscreen = "全螢幕播放"
+}
+
 if (location.pathname.search(/videos/) >= 0) {
     var VideoPATH = location.pathname
     var VideoID = VideoPATH.substring(VideoPATH.indexOf("s/") + 2, VideoPATH.indexOf("s/") + 7)
-    var EmbedURL = 'https://tw.voicetube.com/embed/' + VideoID
-    jQuery('#embed-section').append('<a href="javascript:;" id="fullscreenBtn">&nbsp;全螢幕播放</a>')
+    var EmbedURL = 'https://' + subdomain + '.voicetube.com/embed/' + VideoID
+    jQuery('#embed-section').append('<a href="javascript:;" id="fullscreenBtn">&nbsp;' + fullscreen + '</a>')
     jQuery('#fullscreenBtn').click(function() {
         window.open(EmbedURL, '_blank')
     })
